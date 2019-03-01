@@ -2,7 +2,7 @@ import {observable, action, configure, computed} from 'mobx';
 
 configure({ enforceActions: 'always' })
 
-class TodoboxStore {
+class FormStore {
     @observable 
     todos = [{
       title: "todo标题",
@@ -22,4 +22,4 @@ class TodoboxStore {
     }
   }
 
-  export default TodoboxStore;
+  export default FormStore;
