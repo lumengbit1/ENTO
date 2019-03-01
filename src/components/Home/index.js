@@ -12,7 +12,7 @@ class Home extends Component  {
     return (
       <div className='homepage'>
         <div className='formcontent'>
-        <FormContent />
+        <FormContent  />
         </div>
         <div className='landingarea'>
         landingarea

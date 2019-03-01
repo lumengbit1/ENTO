@@ -41,12 +41,11 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
-    "react": "^16.8.3",
     "react-app-polyfill": "^0.2.1",
     "react-dev-utils": "^7.0.3",
     "react-dom": "^16.8.3",
-    "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "reactjs-localstorage": "0.0.7",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
@@ -134,6 +133,9 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "less": "^3.9.0",
-    "less-loader": "^4.1.0"
+    "less-loader": "^4.1.0",
+    "react": "^16.8.3",
+    "react-mobx-vm": "^0.2.1",
+    "react-router": "^3.2.1"
   }
 }

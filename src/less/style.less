@@ -1,4 +1,8 @@
 @borderstyle: 1px solid #000;
+@formblock:{
+    display: block;
+    margin:20px 0;
+};
 
 body {
     margin: 0 5px;
@@ -35,9 +39,8 @@ text-align: center;
 }
 
 .block{
-    width: 300px;
-    display: block;
-    margin:5px 0;
+    width: 400px;
+    @formblock();
 }
 .center{
     text-align: center;
@@ -50,6 +53,10 @@ label {
 }
 input,select{
     vertical-align: top;
+}
+.submit{
+    width:100px;
+    @formblock();
 }
 
 
