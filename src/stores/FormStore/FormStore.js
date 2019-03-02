@@ -15,11 +15,7 @@ class FormStore {
     @observable 
     localStorageValue = [];
 
-    @action 
-    handleConfirm() {
-        this.localStorageValue.push(this.formvalue)
-        reactLocalStorage.setObject('FormValue', this.localStorageValue);
-    }
+
     @action 
     formName(name){
         this.formvalue.name=name;
@@ -39,6 +35,22 @@ class FormStore {
     @action 
     formEndtime(endtime){
         this.formvalue.endtime=endtime;
+    }
+
+    @action 
+    handleConfirm() {
+        let data={
+            name:'',
+            type:'',
+            shift:'',
+            starttime:'',
+            endtime:''
+        };
+        for(let i in data){
+            data[i]=this.formvalue[i];
+        }
+        this.localStorageValue.push(data);
+        reactLocalStorage.setObject('FormValue', this.localStorageValue);
     }
     @action 
     handleSubmit() {

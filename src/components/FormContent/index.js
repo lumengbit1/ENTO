@@ -6,7 +6,6 @@ import './../../css/style.css';
 
 @inject('rootStore')
 @observer
-// @binding(this.props.rootStore.formStore)
 class FormContent extends Component  {
 
     handleNameChangle = (e) => {

@@ -25,6 +25,8 @@ code {
 .homepage .landingarea {
   border: 1px solid #000;
   flex: 1;
+  text-align: start;
+  display: flex;
 }
 .block {
   width: 400px;
