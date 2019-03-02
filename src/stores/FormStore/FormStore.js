@@ -12,11 +12,13 @@ class FormStore {
         starttime:'',
         endtime:''
     }
+    @observable 
+    localStorageValue = [];
 
     @action 
     handleConfirm() {
-        console.log(this.formvalue.name);
-        reactLocalStorage.setObject('FormValue', this.formvalue);
+        this.localStorageValue.push(this.formvalue)
+        reactLocalStorage.setObject('FormValue', this.localStorageValue);
     }
     @action 
     formName(name){
