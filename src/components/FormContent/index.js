@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import {observer, inject} from 'mobx-react';
+import TimePicker from 'react-time-picker';
 
 import './../../css/style.css';
 
 
 @inject('rootStore')
 @observer
-// @binding(this.props.rootStore.formStore)
 class FormContent extends Component  {
 
     handleNameChangle = (e) => {
@@ -20,14 +20,22 @@ class FormContent extends Component  {
     handleTypeChangle = (e) => {
         this.props.rootStore.formStore.formType(e.target.value);
     }
-    handleStartTimeChangle = (e) => {
-        this.props.rootStore.formStore.formStarttime(e.target.value);
+    handleStartTimeChangle = (time) => {
+        this.props.rootStore.formStore.formStarttime(time);
     }
-    handleEndTimeChangle = (e) => {
-        this.props.rootStore.formStore.formEndtime(e.target.value);
+    handleEndTimeChangle = (time) => {
+        this.props.rootStore.formStore.formEndtime(time);
+    }
+    handleCriticalChangle = (e) => {
+        this.props.rootStore.formStore.formCritical(e.target.value);
+    }
+    handleLowChangle = (e) => {
+        this.props.rootStore.formStore.formLow(e.target.value);
     }
 
+
   render() {
+    const format = 'h:mm a';
     return (
       <div className='form'>
         <form>
@@ -48,11 +56,18 @@ class FormContent extends Component  {
                 <input type="radio" name="shift" value="Note" onChange={this.handleShiftChangle} />Note
             </div>
             <div className='block'>
+                <label htmlFor='critical'>CriticalAlert:</label>
+                <input type='number' name='critical' onChange={this.handleCriticalChangle} min={0}/>
+                <br></br>
+                <label htmlFor='low'>LowAlert:</label>
+                <input type='number' name='low' onChange={this.handleLowChangle} min={0}/>
+            </div>
+            <div className='block'>
                 <label htmlFor='starttime'>Start Time:</label>
-                <input type="time" name="starttime" value="Start Time" onChange={this.handleStartTimeChangle}/>
+                <TimePicker name='starttime' clockIcon={null} disableClock={true} onChange={this.handleStartTimeChangle}/>
                 <br/>
                 <label htmlFor='endtime'>End Time:</label>
-                <input type="time" name="endtime" value="End Time" onChange={this.handleEndTimeChangle}/>
+                <TimePicker name='endtime' clockIcon={null} disableClock={true} onChange={this.handleEndTimeChangle}/>
             </div>
             <div className='block center'>
                 <input type='button' value='Comfirm' onClick={()=>this.props.rootStore.formStore.handleConfirm()}/>

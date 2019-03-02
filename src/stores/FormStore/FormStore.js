@@ -10,14 +10,16 @@ class FormStore {
         type:'',
         shift:'',
         starttime:'',
-        endtime:''
+        endtime:'',
+        critical:0,
+        low:0
     }
+    @observable 
+    localStorageValue = [];
+    @observable 
+    index = 0;
 
-    @action 
-    handleConfirm() {
-        console.log(this.formvalue.name);
-        reactLocalStorage.setObject('FormValue', this.formvalue);
-    }
+
     @action 
     formName(name){
         this.formvalue.name=name;
@@ -38,15 +40,40 @@ class FormStore {
     formEndtime(endtime){
         this.formvalue.endtime=endtime;
     }
+
+    @action 
+    handleConfirm() {
+        let data={
+            name:'',
+            type:'',
+            shift:'',
+            starttime:'',
+            endtime:'',
+            critical:0,
+            low:0
+        };
+        for(let i in data){
+            data[i]=this.formvalue[i];
+        }
+        this.localStorageValue.push(data);
+        reactLocalStorage.setObject('FormValue', this.localStorageValue);
+        this.index++;
+    }
     @action 
     handleSubmit() {
       
         console.log(reactLocalStorage.getObject('FormValue'));
     }
+    @action 
+    formCritical(num) {
+        this.formvalue.critical=num;
+    }
+    @action 
+    formLow(num) {
+        this.formvalue.low=num;
+    }
 
-    // @computed get unfinishedTodos  () {
-    //   return  this.todos.filter((todo) => todo.done)
-    // }
+
   }
 
 export default FormStore;

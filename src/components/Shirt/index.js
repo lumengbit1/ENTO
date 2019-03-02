@@ -1,0 +1,34 @@
+import React, { Component } from 'react';
+import {observer, inject} from 'mobx-react';
+
+import './../../css/style.css';
+import Critical from './Critical';
+import Low from './Low';
+
+
+@inject('rootStore')
+@observer
+class Shirt extends Component  {
+  render() {
+      const critical=(this.props.data.critical===0||this.props.data.critical==='0')?false:true;
+      const low=(this.props.data.low===0||this.props.data.low==='0')?false:true;
+      const display=critical||low;
+    return (
+      <div className='shift'>
+        <div>
+            <div className='shiftblock'>
+                <p>{this.props.data.starttime}</p>
+                <p>-</p>
+                <p>{this.props.data.endtime}</p>
+            </div>
+            <div className='shiftblock'>
+                <p>{this.props.data.name?this.props.data.name:'name'}</p>
+            </div>
+        </div>
+        {display?(low?<Low low={this.props.data.low} critical={this.props.data.critical}/>:<Critical critical={this.props.data.critical}/>):''}
+        {/* {console.log(this.props.data.critical)} */}
+      </div>
+    )
+  }
+}
+export default Shirt;
