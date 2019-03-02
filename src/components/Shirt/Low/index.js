@@ -11,10 +11,10 @@ class Low extends Component  {
     return (
         <div className='lownotice'>
             <div>
-                {`1 CRITICAL ALERT`}
+                {`${this.props.critical} CRITICAL ALERT`}
             </div>
             <div>
-                {`1 LOW ALERT`}
+                {`${this.props.low} LOW ALERT`}
             </div>
         </div>
     )

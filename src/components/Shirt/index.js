@@ -10,6 +10,9 @@ import Low from './Low';
 @observer
 class Shirt extends Component  {
   render() {
+      const critical=(this.props.data.critical===0||this.props.data.critical==='0')?false:true;
+      const low=(this.props.data.low===0||this.props.data.low==='0')?false:true;
+      const display=critical||low;
     return (
       <div className='shift'>
         <div>
@@ -19,10 +22,11 @@ class Shirt extends Component  {
                 <p>{this.props.data.endtime}</p>
             </div>
             <div className='shiftblock'>
-                <p>{this.props.data.name}</p>
+                <p>{this.props.data.name?this.props.data.name:'name'}</p>
             </div>
         </div>
-        <Low/>
+        {display?(low?<Low low={this.props.data.low} critical={this.props.data.critical}/>:<Critical critical={this.props.data.critical}/>):''}
+        {/* {console.log(this.props.data.critical)} */}
       </div>
     )
   }

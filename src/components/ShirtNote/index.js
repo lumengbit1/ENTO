@@ -13,7 +13,7 @@ class ShirtNote extends Component  {
     const shiftnote= this.props.data.shift==='Shift';
     return (
       <div>
-        {shiftnote? <Shift data={this.props.data}/> : <Note/>}
+        {shiftnote? <Shift data={this.props.data}/> : <Note data={this.props.data}/>}
       </div>
     )
   }

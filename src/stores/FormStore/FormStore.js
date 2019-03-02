@@ -10,7 +10,9 @@ class FormStore {
         type:'',
         shift:'',
         starttime:'',
-        endtime:''
+        endtime:'',
+        critical:0,
+        low:0
     }
     @observable 
     localStorageValue = [];
@@ -46,7 +48,9 @@ class FormStore {
             type:'',
             shift:'',
             starttime:'',
-            endtime:''
+            endtime:'',
+            critical:0,
+            low:0
         };
         for(let i in data){
             data[i]=this.formvalue[i];
@@ -60,10 +64,16 @@ class FormStore {
       
         console.log(reactLocalStorage.getObject('FormValue'));
     }
+    @action 
+    formCritical(num) {
+        this.formvalue.critical=num;
+    }
+    @action 
+    formLow(num) {
+        this.formvalue.low=num;
+    }
 
-    // @computed get unfinishedTodos  () {
-    //   return  this.todos.filter((todo) => todo.done)
-    // }
+
   }
 
 export default FormStore;

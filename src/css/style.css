@@ -53,14 +53,10 @@ select {
   margin: 20px 0;
 }
 .shift {
-  position: flex;
-  flex-direction: column;
   width: 144px;
   height: 47px;
   border: 1px solid #eaeef1;
   background-color: #fafbfb;
-  justify-content: center;
-  align-items: center;
   margin: 20px;
   border-radius: 5px;
   overflow: hidden;
@@ -79,7 +75,7 @@ select {
   width: 130px;
   height: 47px;
   top: -52px;
-  left: 135px;
+  left: 130px;
   color: white;
   font-weight: bold;
   font-size: 10px;
@@ -99,7 +95,7 @@ select {
   width: 130px;
   height: 47px;
   top: -52px;
-  left: 135px;
+  left: 138px;
   color: white;
   font-weight: bold;
   font-size: 10px;
@@ -127,6 +123,15 @@ select {
     left: 36px;
   }
 }
-.shiftnote {
+.note {
   background-color: #fcf7ba;
+  width: 128px;
+  height: 30px;
+  color: black;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
 }

@@ -10,7 +10,7 @@ class Critical extends Component  {
   render() {
     return (
         <div className='criticalnotice'>
-            <p>{`1 CRITICAL ALERT`}</p>
+            <p>{`${this.props.critical} CRITICAL ALERT`}</p>
         </div>
     )
   }

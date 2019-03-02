@@ -9,8 +9,8 @@ import './../../css/style.css';
 class Note extends Component  {
   render() {
     return (
-      <div className='shiftnote'>
-        Note
+      <div className='note'>
+        <p>{this.props.data.name?this.props.data.name:'name'}</p>
       </div>
     )
   }
