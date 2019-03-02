@@ -25,8 +25,9 @@ code {
 .homepage .landingarea {
   border: 1px solid #000;
   flex: 1;
-  text-align: start;
   display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 .block {
   width: 400px;
@@ -50,4 +51,82 @@ select {
   width: 100px;
   display: block;
   margin: 20px 0;
+}
+.shift {
+  position: flex;
+  flex-direction: column;
+  width: 144px;
+  height: 47px;
+  border: 1px solid #eaeef1;
+  background-color: #fafbfb;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.shift .shiftblock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shift .shiftblock p {
+  margin: 0 5px;
+}
+.criticalnotice {
+  position: relative;
+  background-color: #d0021b;
+  width: 130px;
+  height: 47px;
+  top: -52px;
+  left: 135px;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+.criticalnotice p {
+  position: relative;
+  top: 35%;
+  left: -8%;
+}
+.criticalnotice:hover {
+  cursor: pointer;
+  animation: mymove 1s;
+  animation-fill-mode: forwards;
+}
+.lownotice {
+  position: relative;
+  width: 130px;
+  height: 47px;
+  top: -52px;
+  left: 135px;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+.lownotice div {
+  position: relative;
+  top: 22%;
+  left: -8%;
+  background-color: #f4e31c;
+  height: 24px;
+}
+.lownotice div:nth-child(1) {
+  background-color: #d0021b;
+}
+.lownotice:hover {
+  cursor: pointer;
+  animation: mymove 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes mymove {
+  from {
+    left: 130px;
+  }
+  to {
+    left: 36px;
+  }
+}
+.shiftnote {
+  background-color: #fcf7ba;
 }

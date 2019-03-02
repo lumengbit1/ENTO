@@ -14,6 +14,8 @@ class FormStore {
     }
     @observable 
     localStorageValue = [];
+    @observable 
+    index = 0;
 
 
     @action 
@@ -51,6 +53,7 @@ class FormStore {
         }
         this.localStorageValue.push(data);
         reactLocalStorage.setObject('FormValue', this.localStorageValue);
+        this.index++;
     }
     @action 
     handleSubmit() {

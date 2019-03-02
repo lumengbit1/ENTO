@@ -3,7 +3,7 @@ import {observer, inject} from 'mobx-react';
 
 import './../../css/style.css';
 import FormContent from './../FormContent';
-import Shift from './../Shirt';
+import ShirtNote from './../ShirtNote';
 
 
 @inject('rootStore')
@@ -18,7 +18,7 @@ class Home extends Component  {
         </div>
         <div className='landingarea'>
           {this.props.rootStore.formStore.localStorageValue.map(item=>
-          <Shift/>
+          <ShirtNote data={item}/>
           )}
         </div>
       </div>
