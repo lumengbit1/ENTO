@@ -35,42 +35,41 @@ class FormContent extends Component  {
 
 
   render() {
-    const format = 'h:mm a';
     return (
       <div className='form'>
         <form>
             <div className='block'>
                 <label htmlFor='name'>Name:</label>
-                <input type='text' name='name' onChange={this.handleNameChangle} />
+                <input type='text' name='name' className='name' onChange={this.handleNameChangle} />
             </div>
             <div className='block'>
                 <label htmlFor='type'>Type:</label>
-                <select name='type' onChange={this.handleTypeChangle}>
+                <select name='type' className='type' onChange={this.handleTypeChangle}>
                     <option selected style={{'display': 'none'}}></option>
                     <option value='Cleaner'>Cleaner</option>
                 </select>
             </div>
             <div className='block'>
                 <label htmlFor='shift'>Shift/Note:</label>
-                <input type="radio" name="shift" value="Shift" onChange={this.handleShiftChangle} />Shift
-                <input type="radio" name="shift" value="Note" onChange={this.handleShiftChangle} />Note
+                <input type="radio" name="shift" className='shift' value="Shift" onChange={this.handleShiftChangle} />Shift
+                <input type="radio" name="shift" value="Note" className='shift' onChange={this.handleShiftChangle} />Note
             </div>
             <div className='block'>
                 <label htmlFor='critical'>CriticalAlert:</label>
-                <input type='number' name='critical' onChange={this.handleCriticalChangle} min={0}/>
+                <input type='number' name='critical' className='critical' onChange={this.handleCriticalChangle} min={0}/>
                 <br></br>
                 <label htmlFor='low'>LowAlert:</label>
-                <input type='number' name='low' onChange={this.handleLowChangle} min={0}/>
+                <input type='number' name='low' className='low' onChange={this.handleLowChangle} min={0}/>
             </div>
             <div className='block'>
                 <label htmlFor='starttime'>Start Time:</label>
-                <TimePicker name='starttime' clockIcon={null} disableClock={true} onChange={this.handleStartTimeChangle}/>
+                <TimePicker name='starttime' className='starttime' clockIcon={null} disableClock={true} onChange={this.handleStartTimeChangle}/>
                 <br/>
                 <label htmlFor='endtime'>End Time:</label>
-                <TimePicker name='endtime' clockIcon={null} disableClock={true} onChange={this.handleEndTimeChangle}/>
+                <TimePicker name='endtime' className='endtime' clockIcon={null} disableClock={true} onChange={this.handleEndTimeChangle}/>
             </div>
             <div className='block center'>
-                <input type='button' value='Comfirm' onClick={()=>this.props.rootStore.formStore.handleConfirm()}/>
+                <input type='button' value='Comfirm' className='comfirm' onClick={()=>this.props.rootStore.formStore.handleConfirm()}/>
                 <input type='reset' value='Reset'/>
             </div>
 

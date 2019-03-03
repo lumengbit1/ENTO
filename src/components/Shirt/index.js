@@ -16,17 +16,16 @@ class Shirt extends Component  {
     return (
       <div className='shift'>
         <div>
-            <div className='shiftblock'>
+            <div id='time' className='shiftblock'>
                 <p>{this.props.data.starttime}</p>
                 <p>-</p>
                 <p>{this.props.data.endtime}</p>
             </div>
-            <div className='shiftblock'>
+            <div id='name' className='shiftblock'>
                 <p>{this.props.data.name?this.props.data.name:'name'}</p>
             </div>
         </div>
         {display?(low?<Low low={this.props.data.low} critical={this.props.data.critical}/>:<Critical critical={this.props.data.critical}/>):''}
-        {/* {console.log(this.props.data.critical)} */}
       </div>
     )
   }

@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Route Test Route Test 1`] = `
+<div>
+  <div
+    className="App"
+  >
+    <div
+      className="homepage"
+    >
+      <div
+        className="formcontent"
+      >
+        <div
+          className="form"
+        >
+          <form>
+            <div
+              className="block"
+            >
+              <label
+                htmlFor="name"
+              >
+                Name:
+              </label>
+              <input
+                className="name"
+                name="name"
+                onChange={[Function]}
+                type="text"
+              />
+            </div>
+            <div
+              className="block"
+            >
+              <label
+                htmlFor="type"
+              >
+                Type:
+              </label>
+              <select
+                className="type"
+                name="type"
+                onChange={[Function]}
+              >
+                <option
+                  selected={true}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                />
+                <option
+                  value="Cleaner"
+                >
+                  Cleaner
+                </option>
+              </select>
+            </div>
+            <div
+              className="block"
+            >
+              <label
+                htmlFor="shift"
+              >
+                Shift/Note:
+              </label>
+              <input
+                className="shift"
+                name="shift"
+                onChange={[Function]}
+                type="radio"
+                value="Shift"
+              />
+              Shift
+              <input
+                className="shift"
+                name="shift"
+                onChange={[Function]}
+                type="radio"
+                value="Note"
+              />
+              Note
+            </div>
+            <div
+              className="block"
+            >
+              <label
+                htmlFor="critical"
+              >
+                CriticalAlert:
+              </label>
+              <input
+                className="critical"
+                min={0}
+                name="critical"
+                onChange={[Function]}
+                type="number"
+              />
+              <br />
+              <label
+                htmlFor="low"
+              >
+                LowAlert:
+              </label>
+              <input
+                className="low"
+                min={0}
+                name="low"
+                onChange={[Function]}
+                type="number"
+              />
+            </div>
+            <div
+              className="block"
+            >
+              <label
+                htmlFor="starttime"
+              >
+                Start Time:
+              </label>
+              <div
+                className="react-time-picker react-time-picker--closed react-time-picker--enabled starttime"
+                onFocus={[Function]}
+              >
+                <div
+                  className="react-time-picker__wrapper"
+                >
+                  <div
+                    className="react-time-picker__inputGroup"
+                    onClick={[Function]}
+                    role="presentation"
+                  >
+                    <input
+                      max={null}
+                      min={null}
+                      name="starttime"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      step={60}
+                      style={
+                        Object {
+                          "left": "-9999px",
+                          "position": "absolute",
+                          "top": "-9999px",
+                          "visibility": "hidden",
+                        }
+                      }
+                      type="time"
+                      value=""
+                    />
+                    
+                    <input
+                      autoComplete="off"
+                      className="react-time-picker__inputGroup__input react-time-picker__inputGroup__hour"
+                      max={12}
+                      min={1}
+                      name="hour12"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      placeholder="--"
+                      required={null}
+                      type="number"
+                      value={false}
+                    />
+                    <span
+                      className="react-time-picker__inputGroup__divider"
+                    >
+                      :
+                    </span>
+                    <input
+                      autoComplete="off"
+                      className="react-time-picker__inputGroup__input react-time-picker__inputGroup__minute"
+                      max={59}
+                      min={0}
+                      name="minute"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      placeholder="--"
+                      required={null}
+                      type="number"
+                      value=""
+                    />
+                    <span
+                      className="react-time-picker__inputGroup__divider"
+                    >
+                       
+                    </span>
+                    <select
+                      className="react-time-picker__inputGroup__input react-time-picker__inputGroup__amPm"
+                      name="amPm"
+                      onChange={[Function]}
+                      required={null}
+                      value=""
+                    >
+                      <option
+                        value=""
+                      >
+                        --
+                      </option>
+                      <option
+                        value="am"
+                      >
+                        AM
+                      </option>
+                      <option
+                        value="pm"
+                      >
+                        PM
+                      </option>
+                    </select>
+                    
+                  </div>
+                  <button
+                    className="react-time-picker__clear-button react-time-picker__button"
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      height="19"
+                      viewBox="0 0 19 19"
+                      width="19"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        stroke="black"
+                        strokeWidth="2"
+                      >
+                        <line
+                          x1="4"
+                          x2="15"
+                          y1="4"
+                          y2="15"
+                        />
+                        <line
+                          x1="15"
+                          x2="4"
+                          y1="4"
+                          y2="15"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <br />
+              <label
+                htmlFor="endtime"
+              >
+                End Time:
+              </label>
+              <div
+                className="react-time-picker react-time-picker--closed react-time-picker--enabled endtime"
+                onFocus={[Function]}
+              >
+                <div
+                  className="react-time-picker__wrapper"
+                >
+                  <div
+                    className="react-time-picker__inputGroup"
+                    onClick={[Function]}
+                    role="presentation"
+                  >
+                    <input
+                      max={null}
+                      min={null}
+                      name="endtime"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      step={60}
+                      style={
+                        Object {
+                          "left": "-9999px",
+                          "position": "absolute",
+                          "top": "-9999px",
+                          "visibility": "hidden",
+                        }
+                      }
+                      type="time"
+                      value=""
+                    />
+                    
+                    <input
+                      autoComplete="off"
+                      className="react-time-picker__inputGroup__input react-time-picker__inputGroup__hour"
+                      max={12}
+                      min={1}
+                      name="hour12"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      placeholder="--"
+                      required={null}
+                      type="number"
+                      value={false}
+                    />
+                    <span
+                      className="react-time-picker__inputGroup__divider"
+                    >
+                      :
+                    </span>
+                    <input
+                      autoComplete="off"
+                      className="react-time-picker__inputGroup__input react-time-picker__inputGroup__minute"
+                      max={59}
+                      min={0}
+                      name="minute"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      placeholder="--"
+                      required={null}
+                      type="number"
+                      value=""
+                    />
+                    <span
+                      className="react-time-picker__inputGroup__divider"
+                    >
+                       
+                    </span>
+                    <select
+                      className="react-time-picker__inputGroup__input react-time-picker__inputGroup__amPm"
+                      name="amPm"
+                      onChange={[Function]}
+                      required={null}
+                      value=""
+                    >
+                      <option
+                        value=""
+                      >
+                        --
+                      </option>
+                      <option
+                        value="am"
+                      >
+                        AM
+                      </option>
+                      <option
+                        value="pm"
+                      >
+                        PM
+                      </option>
+                    </select>
+                    
+                  </div>
+                  <button
+                    className="react-time-picker__clear-button react-time-picker__button"
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <svg
+                      height="19"
+                      viewBox="0 0 19 19"
+                      width="19"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        stroke="black"
+                        strokeWidth="2"
+                      >
+                        <line
+                          x1="4"
+                          x2="15"
+                          y1="4"
+                          y2="15"
+                        />
+                        <line
+                          x1="15"
+                          x2="4"
+                          y1="4"
+                          y2="15"
+                        />
+                      </g>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              className="block center"
+            >
+              <input
+                className="comfirm"
+                onClick={[Function]}
+                type="button"
+                value="Comfirm"
+              />
+              <input
+                type="reset"
+                value="Reset"
+              />
+            </div>
+          </form>
+          <button
+            className=" submit center"
+            onClick={[Function]}
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <div
+        className="landingarea"
+      />
+    </div>
+  </div>
+</div>
+`;
