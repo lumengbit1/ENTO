@@ -67,7 +67,7 @@ exports[`Route Test Route Test 1`] = `
                 Shift/Note:
               </label>
               <input
-                className="shift"
+                className="shiftinput"
                 name="shift"
                 onChange={[Function]}
                 type="radio"
@@ -75,7 +75,7 @@ exports[`Route Test Route Test 1`] = `
               />
               Shift
               <input
-                className="shift"
+                className="shiftinput"
                 name="shift"
                 onChange={[Function]}
                 type="radio"

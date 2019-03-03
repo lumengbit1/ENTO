@@ -1,10 +1,10 @@
 import React from 'react';
-import Enzyme,{ configure, shallow, mount, render } from 'enzyme';
+import Enzyme,{ mount, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import RootStore from '../stores/RootStore';
 import {Provider} from 'mobx-react';
 import Home from './../components/Home';
-import sinon from 'sinon';
+
 
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -29,7 +29,7 @@ describe("Render Test", function() {
       rootStore.formStore.formName('name');
       rootStore.formStore.handleConfirm();
       wrapper.update();
-      expect(wrapper.find('ShirtNote').length).toBe(1);
+      expect(wrapper.find('ShiftNote').length).toBe(1);
     })
 })
 

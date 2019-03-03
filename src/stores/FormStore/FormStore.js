@@ -1,9 +1,9 @@
-import {observable, action, configure, computed} from 'mobx';
+import {observable, action, configure} from 'mobx';
 import {reactLocalStorage} from 'reactjs-localstorage';
 
 configure({ enforceActions: 'always' })
 class FormStore {
-
+    /*Corresponding interface input elements  */   
     @observable 
     formvalue = {
         name:'',
@@ -14,12 +14,11 @@ class FormStore {
         critical:0,
         low:0
     }
+    /* For save into localStorage and submit in bulk */
     @observable 
     localStorageValue = [];
-    @observable 
-    index = 0;
 
-
+    /* For assigning params from page to mobx state params */
     @action 
     formName(name){
         this.formvalue.name=name;
@@ -40,7 +39,16 @@ class FormStore {
     formEndtime(endtime){
         this.formvalue.endtime=endtime;
     }
+    @action 
+    formCritical(num) {
+        this.formvalue.critical=num;
+    }
+    @action 
+    formLow(num) {
+        this.formvalue.low=num;
+    }
 
+    /* Click Confirm button on the page to save params into localStorage and display in landing area */
     @action 
     handleConfirm() {
         let data={
@@ -57,21 +65,14 @@ class FormStore {
         }
         this.localStorageValue.push(data);
         reactLocalStorage.setObject('FormValue', this.localStorageValue);
-        this.index++;
     }
+    /* Should get params from localStorage and send to server */
     @action 
     handleSubmit() {
       
         console.log(reactLocalStorage.getObject('FormValue'));
     }
-    @action 
-    formCritical(num) {
-        this.formvalue.critical=num;
-    }
-    @action 
-    formLow(num) {
-        this.formvalue.low=num;
-    }
+
 
 
   }

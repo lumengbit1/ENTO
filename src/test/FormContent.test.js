@@ -33,7 +33,7 @@ describe('Operation Test',()=>{
     const time = '12:12'
     wrapper.find('.name').at(0).simulate('change', {target: {value}});
     wrapper.find('.type').at(0).simulate('change', {target: {value}});
-    wrapper.find('.shift').at(0).simulate('change', {target: {value}});
+    wrapper.find('.shiftinput').at(0).simulate('change', {target: {value}});
       wrapper.find('.starttime').at(0).instance().props.onChange(time);
     wrapper.find('.endtime').at(0).instance().props.onChange(time);
     wrapper.find('.critical').at(0).simulate('change', {target: {value}});
