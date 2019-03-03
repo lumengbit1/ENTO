@@ -11,7 +11,7 @@ Enzyme.configure({ adapter: new Adapter() });
 const rootStore = new RootStore();
 describe("Render Test", function() {
 
-    it('case: expect rending correct',()=>{
+    it('case: expect rendering correct',()=>{
       const wrapper = render(
         <Provider  rootStore={rootStore}>
           <FormContent />
@@ -34,8 +34,7 @@ describe('Operation Test',()=>{
     wrapper.find('.name').at(0).simulate('change', {target: {value}});
     wrapper.find('.type').at(0).simulate('change', {target: {value}});
     wrapper.find('.shift').at(0).simulate('change', {target: {value}});
-    // wrapper.find('.starttime').at(0).simulate('change', {time: {time}});
-    wrapper.find('.starttime').at(0).instance().props.onChange(time);
+      wrapper.find('.starttime').at(0).instance().props.onChange(time);
     wrapper.find('.endtime').at(0).instance().props.onChange(time);
     wrapper.find('.critical').at(0).simulate('change', {target: {value}});
     wrapper.find('.low').at(0).simulate('change', {target: {value}});
@@ -56,5 +55,6 @@ describe('Operation Test',()=>{
     expect(comfirm.called).toEqual(true);
     expect(submit.called).toEqual(true);
   })
+  
 
 })
