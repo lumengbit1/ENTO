@@ -389,12 +389,13 @@ exports[`Route Test Route Test 1`] = `
               className="block center"
             >
               <input
-                className="comfirm"
+                className="confirm"
                 onClick={[Function]}
                 type="button"
-                value="Comfirm"
+                value="confirm"
               />
               <input
+                className="reset"
                 type="reset"
                 value="Reset"
               />

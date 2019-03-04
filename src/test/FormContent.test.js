@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme,{ configure, shallow, mount, render } from 'enzyme';
+import Enzyme,{ mount, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import RootStore from '../stores/RootStore';
 import {Provider} from 'mobx-react';
@@ -34,7 +34,7 @@ describe('Operation Test',()=>{
     wrapper.find('.name').at(0).simulate('change', {target: {value}});
     wrapper.find('.type').at(0).simulate('change', {target: {value}});
     wrapper.find('.shiftinput').at(0).simulate('change', {target: {value}});
-      wrapper.find('.starttime').at(0).instance().props.onChange(time);
+    wrapper.find('.starttime').at(0).instance().props.onChange(time);
     wrapper.find('.endtime').at(0).instance().props.onChange(time);
     wrapper.find('.critical').at(0).simulate('change', {target: {value}});
     wrapper.find('.low').at(0).simulate('change', {target: {value}});
@@ -48,11 +48,11 @@ describe('Operation Test',()=>{
   })
 
   it('case: Button Click Test',()=>{
-    const comfirm = sinon.stub(rootStore.formStore,'handleConfirm');
+    const confirm = sinon.stub(rootStore.formStore,'handleConfirm');
     const submit = sinon.stub(rootStore.formStore,'handleSubmit');
-    wrapper.find('.comfirm').at(0).simulate('click');
+    wrapper.find('.confirm').at(0).simulate('click');
     wrapper.find('.submit').at(0).simulate('click');
-    expect(comfirm.called).toEqual(true);
+    expect(confirm.called).toEqual(true);
     expect(submit.called).toEqual(true);
   })
   

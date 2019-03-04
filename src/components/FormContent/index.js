@@ -33,7 +33,6 @@ class FormContent extends Component  {
         this.props.rootStore.formStore.formLow(e.target.value);
     }
 
-
   render() {
     return (
       <div className='form'>
@@ -69,8 +68,8 @@ class FormContent extends Component  {
                 <TimePicker name='endtime' className='endtime' clockIcon={null} disableClock={true} onChange={this.handleEndTimeChange}/>
             </div>
             <div className='block center'>
-                <input type='button' value='Comfirm' className='comfirm' onClick={()=>this.props.rootStore.formStore.handleConfirm()}/>
-                <input type='reset' value='Reset'/>
+                <input type='button' value='confirm' className='confirm' onClick={()=>this.props.rootStore.formStore.handleConfirm()}/>
+                <input type='reset' className='reset' value='Reset'/>
             </div>
 
         </form>
