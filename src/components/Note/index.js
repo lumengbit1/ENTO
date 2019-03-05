@@ -10,7 +10,9 @@ class Note extends Component  {
   render() {
     return (
       <div className='note'>
-        <p>{this.props.data.name?this.props.data.name:'name'}</p>
+        {/* If Name input be filled, display name, otherwise display "name" as default */}
+        <span className='SDicon'>SD</span>
+        <span>{this.props.data.name?this.props.data.name:'name'}</span>
       </div>
     )
   }

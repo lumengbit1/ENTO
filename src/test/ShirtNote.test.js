@@ -3,7 +3,7 @@ import Enzyme,{ configure, shallow, mount, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import RootStore from '../stores/RootStore';
 import {Provider} from 'mobx-react';
-import ShiftNote from './../components/ShirtNote';
+import ShiftNote from './../components/ShiftNote';
 import sinon from 'sinon';
 
 
