@@ -60,8 +60,8 @@ class FormStore {
             critical: 0,
             low: 0
         };
-        for (let i = 0; i < data.length; i++) {
-            data[i] = this.formvalue[i];
+        for (let key of Object.keys(data)) {
+            data[key] = this.formvalue[key];
         }
         this.localStorageValue.push(data);
         reactLocalStorage.setObject('FormValue', this.localStorageValue);
@@ -69,6 +69,7 @@ class FormStore {
     /* Should get params from localStorage and send to server */
     @action
     handleSubmit() {
+
 
         // console.log(reactLocalStorage.getObject('FormValue'));
     }

@@ -7,7 +7,7 @@ import './../../css/style.css';
 
 @inject('rootStore')
 @observer
-class FormContent extends Component  {
+class FormContent extends Component {
 /* Responding to <input> onChange Events */
     handleNameChange = (e) => {
         this.props.rootStore.formStore.formName(e.target.value);
@@ -50,8 +50,10 @@ class FormContent extends Component  {
             </div>
             <div className='block'>
                 <label htmlFor='shift'>Shift/Note:</label>
-                <input type="radio" name="shift" className='shiftinput' value="Shift" onChange={this.handleShiftChange} />Shift
-                <input type="radio" name="shift" value="Note" className='shiftinput' onChange={this.handleShiftChange} />Note
+                <input type="radio" name="shift" className='shiftinput'
+                    value="Shift" onChange={this.handleShiftChange} />Shift
+                <input type="radio" name="shift" value="Note" className='shiftinput'
+                    onChange={this.handleShiftChange} />Note
             </div>
             <div className='block'>
                 <label htmlFor='critical'>CriticalAlert:</label>
@@ -62,20 +64,23 @@ class FormContent extends Component  {
             </div>
             <div className='block'>
                 <label htmlFor='starttime'>Start Time:</label>
-                <TimePicker name='starttime' className='starttime' clockIcon={null} disableClock={true} onChange={this.handleStartTimeChange}/>
+                <TimePicker name='starttime' className='starttime'
+                    clockIcon={null} disableClock={true} onChange={this.handleStartTimeChange}/>
                 <br/>
                 <label htmlFor='endtime'>End Time:</label>
-                <TimePicker name='endtime' className='endtime' clockIcon={null} disableClock={true} onChange={this.handleEndTimeChange}/>
+                <TimePicker name='endtime' className='endtime'
+                    clockIcon={null} disableClock={true} onChange={this.handleEndTimeChange}/>
             </div>
             <div className='block center'>
-                <input type='button' value='confirm' className='confirm' onClick={()=>this.props.rootStore.formStore.handleConfirm()}/>
+                <input type='button' value='confirm' className='confirm'
+                    onClick={() => this.props.rootStore.formStore.handleConfirm()}/>
                 <input type='reset' className='reset' value='Reset'/>
             </div>
 
         </form>
-        <button className=' submit center' onClick={()=>this.props.rootStore.formStore.handleSubmit()}>Submit</button>
+        <button className=' submit center' onClick={() => this.props.rootStore.formStore.handleSubmit()}>Submit</button>
       </div>
-    )
+    );
   }
 }
 export default FormContent;
