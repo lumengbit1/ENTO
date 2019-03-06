@@ -6,7 +6,7 @@ import './../../../css/style.css';
 
 @inject('rootStore')
 @observer
-class Low extends Component  {
+class Low extends Component {
   render() {
     return (
         <div className='lownotice'>
@@ -19,7 +19,7 @@ class Low extends Component  {
                 {`${this.props.low} LOW ALERT`}
             </div>
         </div>
-    )
+    );
   }
 }
 export default Low;

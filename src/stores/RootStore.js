@@ -7,7 +7,7 @@ configure({ enforceActions: 'always' });
 /*Roor Store  */
 class RootStore {
   constructor() {
-    this.formStore = new FormStore(this)
+    this.formStore = new FormStore(this);
   }
 }
 
