@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-import {Provider } from 'mobx-react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'mobx-react';
 
 import './css/style.css';
 import Root from './router/Routers';
@@ -14,7 +14,6 @@ ReactDOM.render(
         <Router>
             <Root />
         </Router>
-    </Provider>
-,
-document.getElementById('root'));
-
+    </Provider>,
+    document.getElementById('root')
+);

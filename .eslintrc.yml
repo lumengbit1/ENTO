@@ -1,29 +1,30 @@
 env:
-  browser: true
-  es6: true
-  node: true
+    browser: true
+    es6: true
+    node: true
+    jest/globals: true
 extends: 'eslint:recommended'
 globals:
-  Atomics: readonly
-  SharedArrayBuffer: readonly
-  jQuery: true
-  Promise: true
-parser: "babel-eslint"
+    Atomics: readonly
+    SharedArrayBuffer: readonly
+    jQuery: true
+    Promise: true
+parser: 'babel-eslint'
 parserOptions:
-  ecmaFeatures:
-    jsx: true
-    legacyDecorators: true
-  ecmaVersion: 2018
-  sourceType: module
+    ecmaFeatures:
+        jsx: true
+        legacyDecorators: true
+    ecmaVersion: 2018
+    sourceType: module
 plugins:
-  - react
+    - react
+    - jest
 rules:
     no-console:
         - 2
-        -
-            allow:
-                - "warn"
-                - "error"
+        - allow:
+              - 'warn'
+              - 'error'
     no-constant-condition: 0
     comma-dangle: 2
     no-debugger: 2
@@ -43,16 +44,15 @@ rules:
     block-scoped-var: 0
     curly:
         - 2
-        - "all"
+        - 'all'
     eqeqeq:
         - 2
-        - "allow-null"
+        - 'allow-null'
     guard-for-in: 2
     no-else-return: 0
     no-labels:
         - 2
-        -
-            allowLoop: true
+        - allowLoop: true
     no-eval: 2
     no-extend-native: 2
     no-extra-bind: 0
@@ -74,7 +74,7 @@ rules:
     radix: 2
     wrap-iife:
         - 2
-        - "any"
+        - 'any'
     no-delete-var: 2
     no-dupe-args: 2
     no-duplicate-case: 2
@@ -84,73 +84,67 @@ rules:
     no-undef-init: 2
     no-unused-vars:
         - 2
-        -
-            vars: "local"
-            args: "none"
+        - vars: 'local'
+          args: 'none'
     no-use-before-define: 0
     brace-style:
         - 2
-        - "stroustrup"
+        - 'stroustrup'
         - {}
     comma-spacing:
         - 2
-        -
-            before: false
-            after: true
+        - before: false
+          after: true
     comma-style:
         - 2
-        - "last"
+        - 'last'
     new-parens: 2
     no-array-constructor: 2
     no-multi-spaces:
         - 2
-        -
-            ignoreEOLComments: true
-            exceptions:
-                Property: true
+        - ignoreEOLComments: true
+          exceptions:
+              Property: true
     no-new-object: 2
     no-spaced-func: 2
     no-trailing-spaces: 2
     no-extra-parens:
         - 2
-        - "functions"
+        - 'functions'
     no-mixed-spaces-and-tabs: 2
     one-var:
         - 2
-        - "never"
+        - 'never'
     operator-linebreak:
         - 2
-        - "before"
-        -
-            overrides:
-                "=": "after"
+        - 'before'
+        - overrides:
+              '=': 'after'
     quotes:
         - 2
-        - "single"
+        - 'single'
     semi:
         - 2
-        - "always"
+        - 'always'
     semi-spacing: 2
     keyword-spacing: 2
     key-spacing:
         - 2
-        -
-            beforeColon: false
-            afterColon: true
+        - beforeColon: false
+          afterColon: true
     space-before-function-paren:
         - 2
-        -
-            anonymous: "always"
-            named: "never"
+        - anonymous: 'always'
+          named: 'never'
     space-before-blocks:
         - 2
-        - "always"
+        - 'always'
     computed-property-spacing:
         - 2
-        - "never"
+        - 'never'
     space-in-parens:
         - 2
-        - "never"
+        - 'never'
     space-unary-ops: 2
     spaced-comment: 0
 
@@ -164,9 +158,8 @@ rules:
         - 2
         - 120
         - 4
-        -
-            ignoreUrls: true
-            ignoreComments: true
+        - ignoreUrls: true
+          ignoreComments: true
     max-params:
         - 1
         - 15
@@ -174,16 +167,14 @@ rules:
     space-infix-ops: 2
     dot-notation:
         - 2
-        -
-            allowKeywords: true
-            allowPattern: "^catch$"
+        - allowKeywords: true
+          allowPattern: '^catch$'
 
     arrow-spacing: 2
     constructor-super: 2
     no-confusing-arrow:
         - 2
-        -
-            allowParens: true
+        - allowParens: true
     no-class-assign: 2
     no-const-assign: 2
     no-dupe-class-members: 2

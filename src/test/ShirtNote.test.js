@@ -1,47 +1,39 @@
 import React from 'react';
-import Enzyme,{ configure, shallow, mount, render } from 'enzyme';
+import Enzyme, { mount, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import RootStore from '../stores/RootStore';
-import {Provider} from 'mobx-react';
+import { Provider } from 'mobx-react';
 import ShiftNote from './../components/ShiftNote';
-import sinon from 'sinon';
-
 
 Enzyme.configure({ adapter: new Adapter() });
 const rootStore = new RootStore();
-describe("Render Test", function() {
-
-    it('case: expect rendering correct',()=>{
-
+describe('Render Test', function () {
+    it('case: expect rendering correct', () => {
         const props = {
             data: {
-                shift:'Shift'
+                shift: 'Shift'
             }
-
         };
         const wrapper = render(
-            <Provider  rootStore={rootStore}>
-            <ShiftNote {...props}/>
+            <Provider rootStore={rootStore}>
+                <ShiftNote {...props} />
             </Provider>
-        )
+        );
         expect(wrapper).toMatchSnapshot();
-    })
+    });
 
-    it('case: expect <Note> beCalled',()=>{
-
+    it('case: expect <Note> beCalled', () => {
         const props = {
             data: {
-                shift:'Note'
+                shift: 'Note'
             }
-
         };
         const wrapper = mount(
-            <Provider  rootStore={rootStore}>
-                <ShiftNote {...props}/>
+            <Provider rootStore={rootStore}>
+                <ShiftNote {...props} />
             </Provider>
-        )
+        );
         wrapper.setProps(props);
         expect(wrapper.find('Note').length).toBe(1);
-    })
-})
-
+    });
+});

@@ -1,18 +1,18 @@
 @borderstyle: 1px solid #000;
-@formblock:{
+@formblock: {
     display: block;
-    margin:20px 0;
+    margin: 20px 0;
 };
-@tileCriticalColor:#d0021b;
-@tileLowColor:#f4e31c;
-@buttonwidth:100px;
+@tileCriticalColor: #d0021b;
+@tileLowColor: #f4e31c;
+@buttonwidth: 100px;
 
-.noticestyle(@position:relative,@width:130px,@height:47px,@top:-52px,@left:138px, @color:white, @font-weight:bold,@font-size: 10px){
+.noticestyle(@position:relative,@width:130px,@height:47px,@top:-52px,@left:138px, @color:white, @font-weight:bold,@font-size: 10px) {
     position: @position;
-    width:@width;
-    height:@height;
-    top:@top;
-    left:@left;
+    width: @width;
+    height: @height;
+    top: @top;
+    left: @left;
     color: @color;
     font-weight: @font-weight;
     font-size: @font-size;
@@ -20,43 +20,43 @@
 body {
     margin: 0 5px;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-  
+
 code {
-font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
 .App {
-text-align: center;
+    text-align: center;
 }
-.homepage{
+.homepage {
     display: flex;
     justify-content: space-between;
-    height:100vh;
-    @media screen{
-        @media (max-width:480px){
-          flex-direction: column;
+    height: 100vh;
+    @media screen {
+        @media (max-width: 480px) {
+            flex-direction: column;
         }
     }
-    .formcontent{
+    .formcontent {
         border: @borderstyle;
         text-align: left;
         margin-right: 10px;
         padding: 50px;
-        @media screen{
-            @media (max-width:480px){
-                margin:0;
+        @media screen {
+            @media (max-width: 480px) {
+                margin: 0;
                 padding: 5px;
             }
         }
     }
-    .landingarea{
+    .landingarea {
         border: @borderstyle;
         flex: 1;
         display: flex;
@@ -66,11 +66,11 @@ text-align: center;
     }
 }
 
-.block{
+.block {
     // width: 400px;
     @formblock();
 }
-.center{
+.center {
     text-align: center;
 }
 label {
@@ -79,122 +79,124 @@ label {
     text-align: right;
     margin-right: 10px;
 }
-input,select{
+input,
+select {
     vertical-align: top;
 }
-.submit{
-    width:@buttonwidth;
+.submit {
+    width: @buttonwidth;
     @formblock();
-    margin:0 auto;
+    margin: 0 auto;
 }
-.confirm{
+.confirm {
     width: @buttonwidth;
     margin: 10px;
 }
-.reset{
+.reset {
     width: @buttonwidth;
     margin: 10px;
 }
 
-.shift{
-    width:144px;
-    height:47px;
+.shift {
+    width: 144px;
+    height: 47px;
     border: 1px solid #eaeef1;
     background-color: #fafbfb;
     margin: 20px;
     border-radius: 5px;
     overflow: hidden;
-    @media screen{
-        @media (max-width:480px){
-            margin-top:10px;
+    @media screen {
+        @media (max-width: 480px) {
+            margin-top: 10px;
             margin-bottom: 10px;
-            width:125px;
+            width: 125px;
         }
     }
-    .shiftblock{
+    .shiftblock {
         display: flex;
         justify-content: center;
         align-items: center;
-        p{
-            margin:0 5px;
+        p {
+            margin: 0 5px;
         }
-
     }
-
 }
 
-.criticalnotice{
-    background-color:@tileCriticalColor;
+.criticalnotice {
+    background-color: @tileCriticalColor;
     .noticestyle(@left:130px);
-    @media screen{
-        @media (max-width:480px){
+    @media screen {
+        @media (max-width: 480px) {
             .noticestyle(@left:115px);
         }
     }
-    p{
+    p {
         position: relative;
-        top:35%;
-        left:-8%;
+        top: 35%;
+        left: -8%;
     }
-    &:hover{
+    &:hover {
         cursor: pointer;
-        animation:mymove 1s;
+        animation: mymove 1s;
         animation-fill-mode: forwards;
     }
 }
 
-.lownotice{
+.lownotice {
     .noticestyle();
-    @media screen{
-        @media (max-width:480px){
+    @media screen {
+        @media (max-width: 480px) {
             .noticestyle(@left:125px);
         }
     }
-    div{
+    div {
         position: relative;
-        top:22%;
-        left:-8%;
-        background-color:@tileLowColor;
-        height:24px;
+        top: 22%;
+        left: -8%;
+        background-color: @tileLowColor;
+        height: 24px;
         line-height: 24px;
-        &:nth-child(1){
-            background-color:@tileCriticalColor;
+        &:nth-child(1) {
+            background-color: @tileCriticalColor;
         }
     }
-    &:hover{
+    &:hover {
         cursor: pointer;
-        animation:mymove 1s;
+        animation: mymove 1s;
         animation-fill-mode: forwards;
     }
 }
 
-
-@keyframes mymove{
-    from {left:130px;}
-    to {left:36px;}
+@keyframes mymove {
+    from {
+        left: 130px;
+    }
+    to {
+        left: 36px;
+    }
 }
 
-.note{
+.note {
     background-color: #fcf7ba;
     width: 128px;
-    height:30px;
+    height: 30px;
     line-height: 30px;
-    color:black;
+    color: black;
     margin: 20px;
     // padding:10px;
-    display:flex;
-    justify-content:flex-start;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 30px 5px 5px 30px;
     overflow: hidden;
-    @media screen{
-        @media (max-width:480px){
-            margin-top:10px;
+    @media screen {
+        @media (max-width: 480px) {
+            margin-top: 10px;
             margin-bottom: 10px;
         }
     }
-    .SDicon{
-        height:30px;
+    .SDicon {
+        height: 30px;
         width: 30px;
         border: 1px solid #eaeef1;
         background-color: #efdbfc;
@@ -202,9 +204,5 @@ input,select{
         border-radius: 30px;
         line-height: 30px;
         margin-right: 10px;
-        
     }
-
 }
-
-

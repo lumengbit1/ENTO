@@ -1,5 +1,5 @@
-import {observable, action, configure} from 'mobx';
-import {reactLocalStorage} from 'reactjs-localstorage';
+import { observable, action, configure } from 'mobx';
+import { reactLocalStorage } from 'reactjs-localstorage';
 
 configure({ enforceActions: 'always' });
 class FormStore {
@@ -13,7 +13,7 @@ class FormStore {
         endtime: '',
         critical: 0,
         low: 0
-    }
+    };
     /* For save into localStorage and submit in bulk */
     @observable
     localStorageValue = [];
@@ -69,13 +69,8 @@ class FormStore {
     /* Should get params from localStorage and send to server */
     @action
     handleSubmit() {
-
-
         // console.log(reactLocalStorage.getObject('FormValue'));
     }
-
-
-
-  }
+}
 
 export default FormStore;
