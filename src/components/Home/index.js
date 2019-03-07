@@ -15,8 +15,6 @@ class Home extends Component {
                     <FormContent />
                 </div>
                 <div className="landingarea">
-                    {/* According to localStorageValue which will be store
-          into localstore to rende Shift or Note in landing area*/}
                     {this.props.rootStore.formStore.localStorageValue.map(item => (
                         <ShiftNote data={item} />
                     ))}

@@ -9,7 +9,6 @@ import Low from './Low';
 @observer
 class Shirt extends Component {
     render() {
-        /* If Critical number be set on the page, render <Critical> component, same as <Low>, otherwise display nothing*/
         const critical = !(this.props.data.critical === 0 || this.props.data.critical === '0');
         const low = !(this.props.data.low === 0 || this.props.data.low === '0');
         const display = critical || low;

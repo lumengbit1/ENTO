@@ -7,7 +7,6 @@ import './../../css/style.css';
 @inject('rootStore')
 @observer
 class FormContent extends Component {
-    /* Responding to <input> onChange Events */
     handleNameChange = e => {
         this.props.rootStore.formStore.formName(e.target.value);
     };

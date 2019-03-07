@@ -10,12 +10,7 @@ import Note from './../Note';
 class ShiftNote extends Component {
     render() {
         const shiftnote = this.props.data.shift === 'Shift';
-        return (
-            <div>
-                {/* If Shift radio be selected, render <Shift> component, otherwise <Note>  */}
-                {shiftnote ? <Shift data={this.props.data} /> : <Note data={this.props.data} />}
-            </div>
-        );
+        return <div>{shiftnote ? <Shift data={this.props.data} /> : <Note data={this.props.data} />}</div>;
     }
 }
 export default ShiftNote;

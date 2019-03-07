@@ -3,7 +3,6 @@ import { reactLocalStorage } from 'reactjs-localstorage';
 
 configure({ enforceActions: 'always' });
 class FormStore {
-    /*Corresponding interface input elements  */
     @observable
     formvalue = {
         name: '',
@@ -14,11 +13,9 @@ class FormStore {
         critical: 0,
         low: 0
     };
-    /* For save into localStorage and submit in bulk */
     @observable
     localStorageValue = [];
 
-    /* For assigning params from page to mobx state params */
     @action
     formName(name) {
         this.formvalue.name = name;
@@ -48,7 +45,6 @@ class FormStore {
         this.formvalue.low = num;
     }
 
-    /* Click Confirm button on the page to save params into localStorage and display in landing area */
     @action
     handleConfirm() {
         let data = {
@@ -66,7 +62,6 @@ class FormStore {
         this.localStorageValue.push(data);
         reactLocalStorage.setObject('FormValue', this.localStorageValue);
     }
-    /* Should get params from localStorage and send to server */
     @action
     handleSubmit() {
         // console.log(reactLocalStorage.getObject('FormValue'));
