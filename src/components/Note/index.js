@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
-
+import React from 'react';
 import './../../css/style.css';
 
-@inject('rootStore')
-@observer
-class Note extends Component {
-    render() {
-        return (
-            <div className="note">
-                <span className="SDicon">SD</span>
-                <span>{this.props.data.name ? this.props.data.name : 'name'}</span>
-            </div>
-        );
-    }
+function Note(props) {
+    const { data } = props;
+    return (
+        <>
+            <span className="SDicon">SD</span>
+            <span>{data.name ? data.name : 'name'}</span>
+        </>
+    );
 }
 export default Note;

@@ -17,34 +17,17 @@ class FormStore {
     localStorageValue = [];
 
     @action
-    formName(name) {
-        this.formvalue.name = name;
+    updateProperty(key, value) {
+        this.formvalue[key] = value;
     }
     @action
-    formShift(shift) {
-        this.formvalue.shift = shift;
-    }
-    @action
-    formType(type) {
-        this.formvalue.type = type;
-    }
-    @action
-    formStarttime(starttime) {
+    formStartTime(starttime) {
         this.formvalue.starttime = starttime;
     }
     @action
-    formEndtime(endtime) {
+    formEndTime(endtime) {
         this.formvalue.endtime = endtime;
     }
-    @action
-    formCritical(num) {
-        this.formvalue.critical = num;
-    }
-    @action
-    formLow(num) {
-        this.formvalue.low = num;
-    }
-
     @action
     handleConfirm() {
         let data = {

@@ -17,6 +17,26 @@
     font-weight: @font-weight;
     font-size: @font-size;
 }
+
+@tile-whole: {
+    .noticestyle(@left:130px);
+    @media screen {
+        @media (max-width: 480px) {
+            .noticestyle(@left:115px);
+        }
+    }
+    p {
+        position: relative;
+        top: 35%;
+        left: -8%;
+    }
+    &:hover {
+        cursor: pointer;
+        animation: mymove 1s;
+        animation-fill-mode: forwards;
+    }
+};
+
 body {
     margin: 0 5px;
     padding: 0;
@@ -59,10 +79,12 @@ code {
     .landingarea {
         border: @borderstyle;
         flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: flex-start;
-        overflow: auto;
+        .shift-note {
+            display: flex;
+            flex-wrap: wrap;
+            overflow: auto;
+            align-content: flex-start;
+        }
     }
 }
 
@@ -124,7 +146,16 @@ select {
 
 .criticalnotice {
     background-color: @tileCriticalColor;
-    .noticestyle(@left:130px);
+    @tile-whole();
+}
+
+.lowtest {
+    background-color: @tileLowColor;
+    @tile-whole();
+}
+
+.notice-half {
+    .noticestyle(@left:130px, @top:-42px);
     @media screen {
         @media (max-width: 480px) {
             .noticestyle(@left:115px);
@@ -132,13 +163,27 @@ select {
     }
     p {
         position: relative;
-        top: 35%;
+        top: -18%;
         left: -8%;
     }
     &:hover {
         cursor: pointer;
         animation: mymove 1s;
         animation-fill-mode: forwards;
+    }
+    .critical-color {
+        display: block;
+        background-color: @tileCriticalColor;
+        height: 25px;
+        float: left;
+        width: 100%;
+    }
+    .low-color {
+        display: block;
+        background-color: @tileLowColor;
+        height: 25px;
+        float: left;
+        width: 100%;
     }
 }
 

@@ -1,40 +1,62 @@
-import React, { Component } from 'react';
-import { observer, inject } from 'mobx-react';
-
+import React from 'react';
 import './../../css/style.css';
 import Critical from './Critical';
-import Low from './Low';
+import classNames from 'classnames';
 
-@inject('rootStore')
-@observer
-class Shirt extends Component {
-    render() {
-        const critical = !(this.props.data.critical === 0 || this.props.data.critical === '0');
-        const low = !(this.props.data.low === 0 || this.props.data.low === '0');
-        const display = critical || low;
-        return (
-            <div className="shift">
-                <div>
-                    <div id="time" className="shiftblock">
-                        <p>{this.props.data.starttime}</p>
-                        <p>-</p>
-                        <p>{this.props.data.endtime}</p>
-                    </div>
-                    <div id="name" className="shiftblock">
-                        <p>{this.props.data.name ? this.props.data.name : 'name'}</p>
-                    </div>
+function Shirt(props) {
+    const { data } = props;
+    const critical = !(data.critical === 0 || data.critical === '0');
+    const low = !(data.low === 0 || data.low === '0');
+    const criticalClass = classNames({
+        criticalnotice: critical && !low,
+        lowtest: low && !critical
+    });
+
+    function statusChoose() {
+        if (critical && !low) {
+            return (
+                <div className={criticalClass}>
+                    <Critical critical={data.critical} />
                 </div>
-                {display ? (
-                    low ? (
-                        <Low low={this.props.data.low} critical={this.props.data.critical} />
-                    ) : (
-                        <Critical critical={this.props.data.critical} />
-                    )
-                ) : (
-                    ''
-                )}
-            </div>
-        );
+            );
+        }
+ else if (low && !critical) {
+            return (
+                <div className={criticalClass}>
+                    <Critical critical={data.low} />
+                </div>
+            );
+        }
+ else if (critical && low) {
+            return (
+                <>
+                    <div className="notice-half">
+                        <span className="critical-color">
+                            <Critical critical={data.critical} />
+                        </span>
+                        <span className="low-color">
+                            <Critical critical={data.low} />
+                        </span>
+                    </div>
+                </>
+            );
+        }
     }
+
+    return (
+        <>
+            <div>
+                <div id="time" className="shiftblock">
+                    <p>{data.starttime}</p>
+                    <p>-</p>
+                    <p>{data.endtime}</p>
+                </div>
+                <div id="name" className="shiftblock">
+                    <p>{data.name ? data.name : 'name'}</p>
+                </div>
+            </div>
+            {statusChoose()}
+        </>
+    );
 }
 export default Shirt;

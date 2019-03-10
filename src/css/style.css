@@ -41,11 +41,13 @@ code {
   border: 1px solid #000;
   -webkit-box-flex: 1;
           flex: 1;
+}
+.homepage .landingarea .shift-note {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
   overflow: auto;
+  align-content: flex-start;
 }
 .block {
   display: block;
@@ -139,6 +141,89 @@ select {
           animation: mymove 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+.lowtest {
+  background-color: #f4e31c;
+  position: relative;
+  width: 130px;
+  height: 47px;
+  top: -52px;
+  left: 130px;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+@media screen and (max-width: 480px) {
+  .lowtest {
+    position: relative;
+    width: 130px;
+    height: 47px;
+    top: -52px;
+    left: 115px;
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+  }
+}
+.lowtest p {
+  position: relative;
+  top: 35%;
+  left: -8%;
+}
+.lowtest:hover {
+  cursor: pointer;
+  -webkit-animation: mymove 1s;
+          animation: mymove 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.notice-half {
+  position: relative;
+  width: 130px;
+  height: 47px;
+  top: -42px;
+  left: 130px;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+}
+@media screen and (max-width: 480px) {
+  .notice-half {
+    position: relative;
+    width: 130px;
+    height: 47px;
+    top: -52px;
+    left: 115px;
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+  }
+}
+.notice-half p {
+  position: relative;
+  top: -18%;
+  left: -8%;
+}
+.notice-half:hover {
+  cursor: pointer;
+  -webkit-animation: mymove 1s;
+          animation: mymove 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.notice-half .critical-color {
+  display: block;
+  background-color: #d0021b;
+  height: 25px;
+  float: left;
+  width: 100%;
+}
+.notice-half .low-color {
+  display: block;
+  background-color: #f4e31c;
+  height: 25px;
+  float: left;
+  width: 100%;
 }
 .lownotice {
   position: relative;
